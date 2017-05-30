@@ -1,0 +1,19 @@
+spring:
+   application:
+         name : KafkaExample
+   
+   cloud:
+    stream:
+      default-binder: kafka  
+      bindings:
+        customInput:
+          binder: kafka
+          destination: KafkaDemoTopic                      
+          group: testGroup
+          content-type: application/json
+        customOutput:
+            destination: KafkaDemoTopic
+            content-type: application/json 
+            group: testGroup 
+       
+       
